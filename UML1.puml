@@ -1,0 +1,71 @@
+@startuml
+
+' Paquetes
+package colores {
+    class Color {
+        -colorName: String
+        -colorCode: String
+        +setColorCode(): void
+    }
+}
+
+package animales {
+    class Animal {
+        -nombre: String
+        -lugarDeOrigen: String
+        -color: Color
+        -sonido: String
+        +hacerSonido(): void
+        +comer(): void
+    }
+
+    class AnimalAcuatico {
+        -numAletas: int
+        +nadar(): void
+        +comer(): void
+    }
+
+    class AnimalTerrestre {
+        -numPatas: int
+        +correr(): void
+        +comer(): void
+    }
+
+    class AnimalAereo {
+        -numAletas: int
+        +volar(): void
+        +comer(): void
+    }
+
+    class Ballena {
+        -largo: int
+        +pelearConPinocho(): void
+        +comer(): void
+    }
+
+    class Perro {
+        -colorCollar: Color
+        +hacerTrucos(): void
+        +comer(): void
+    }
+
+    class Pajaro {
+        -tipoPico: String
+        +recogerRamas(): void
+        +comer(): void
+    }
+
+    ' Relaciones de herencia
+    AnimalAcuatico --|> Animal
+    AnimalTerrestre --|> Animal
+    AnimalAereo --|> Animal
+
+    Ballena --|> AnimalAcuatico
+    Perro --|> AnimalTerrestre
+    Pajaro --|> AnimalAereo
+
+    ' Asociación con clase Color (desde Animal únicamente)
+    Animal --> colores.Color
+}
+
+@enduml

@@ -1,0 +1,42 @@
+@startuml
+
+package pokemon {
+    interface Pokemon {
+        -nombre: String
+        -nivel: int
+        -tipo: String
+        -puntosDeVida: int
+        -poderEspecial: String
+        +atacar(): void
+        +defenderse(): void
+        +curarse(): void
+        +huir(): void
+    }
+
+    class PokemonFuego
+    class PokemonAgua
+    class PokemonPlanta
+    class PokemonElectrico
+    class PokemonPsiquico
+    class PokemonHielo
+    class PokemonDragon
+    class PokemonFantasma
+    class PokemonRoca
+    class PokemonTierra
+    class PokemonVolador
+
+    ' Relaciones de implementación
+    PokemonFuego ..|> Pokemon
+    PokemonAgua ..|> Pokemon
+    PokemonPlanta ..|> Pokemon
+    PokemonElectrico ..|> Pokemon
+    PokemonPsiquico ..|> Pokemon
+    PokemonHielo ..|> Pokemon
+    PokemonDragon ..|> Pokemon
+    PokemonFantasma ..|> Pokemon
+    PokemonRoca ..|> Pokemon
+    PokemonTierra ..|> Pokemon
+    PokemonVolador ..|> Pokemon
+}
+
+@enduml
